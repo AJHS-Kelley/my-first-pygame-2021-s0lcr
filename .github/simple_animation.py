@@ -1,4 +1,4 @@
-# Simple Animation with PyGame, Jada Dantzler, 01/07/22, 12:43AM, v0.7
+# Simple Animation with PyGame, Jada Dantzler, 01/07/22, 12:48AM, v0.8
 
 import pygame, sys, time
 from pygame.locals import *
@@ -11,7 +11,6 @@ WINDOWWIDTH = 400
 WINDOWHEIGHT = 400
 windowsurface = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT), 0, 32)
 pygame.display.set_caption('Animation Example!')
-
 
 # Setup the direction variables.
 DOWNLEFT = 'downleft'
@@ -82,6 +81,15 @@ while True:
                         b['dir'] = DOWNLEFT
                     if b['dir'] == UPRIGHT:
                         b['dir'] = UPLEFT
+
+            # Draw the box onto the game surface.
+            pygame.draw.rect(windowSurface, b['color'], b['rect'])
+
+# Draw the window to the screen.
+pygame.display.update()
+time.sleep(0.02)
+
+
 
 
         
