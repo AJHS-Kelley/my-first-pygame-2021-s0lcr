@@ -83,11 +83,11 @@ while True:
                         b['dir'] = UPLEFT
 
             # Draw the box onto the game surface.
-            pygame.draw.rect(windowsurface, b['color'], b['rect'])
+        pygame.draw.rect(windowsurface, b['color'], b['rect'])
 
 # Draw the window to the screen.
-pygame.display.update()
-time.sleep(0.02)
+    pygame.display.update()
+    time.sleep(0.02)
 
 
 
