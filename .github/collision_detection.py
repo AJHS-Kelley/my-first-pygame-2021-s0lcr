@@ -98,3 +98,12 @@ while True:
 
     # Draw the player on the surface.
     pygame.draw.rect(windowSurface, BLACK, player)
+
+    # Check for player colliding with food(s).
+    for food in foods[:]:
+        if player.colliderect(food):
+            foods.remove(food)
+
+    # Draw the food.
+    for i in range(len(foods)):
+        pygame.draw.rect(windowSurface, GREEN, foods[i])
