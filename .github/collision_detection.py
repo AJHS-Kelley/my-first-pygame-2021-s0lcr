@@ -1,4 +1,4 @@
-# Pygame Collision Detection Practice, Jada Dantzler, January 27, 2022, 2:24pm, v1.0
+# Pygame Collision Detection Practice, Jada Dantzler, January 27, 2022, 2:40pm, v1.1a
 
 import pygame, sys, random
 from pygame.locals import *
@@ -75,10 +75,10 @@ while True:
                 player.left = random.randint(0, WINDOWWIDTH - player.width)
         
         if event.type == MOUSEBUTTONUP:
-            foods.append(pygame.Rect(event.pos[0], event.pos[1]), FOODSIZE, FOODSIZE))
+            foods.append(pygame.Rect(event.pos[0], event.pos[1], FOODSIZE, FOODSIZE))
         
     foodCounter += 1
-    if foodCounter => NEWFOOD:
+    if foodCounter >= NEWFOOD:
         # Add new food.
         foodCounter = 0
         foods.append(pygame.Rect(random.randit(0, WINDOWWIDTH - FOODSIZE), randomrandit(0, WINDOWHEIGHT - FOODSIZE), FOODSIZE, FOODSIZE))
@@ -107,3 +107,7 @@ while True:
     # Draw the food.
     for i in range(len(foods)):
         pygame.draw.rect(windowSurface, GREEN, foods[i])
+
+    # Draw the window to the screen.
+    pygame.display.update()
+    mainClock.tick(40)
